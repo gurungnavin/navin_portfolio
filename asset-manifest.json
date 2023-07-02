@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/navin_portfolio/static/css/main.31e99706.css",
+    "main.js": "/navin_portfolio/static/js/main.f6fe2b2d.js",
+    "static/media/about.jpg": "/navin_portfolio/static/media/about.72b8c0ed8aaa3574ac32.jpg",
+    "static/media/work5.jpg": "/navin_portfolio/static/media/work5.b9141541f62ef83e9a29.jpg",
+    "static/media/work6.jpg": "/navin_portfolio/static/media/work6.f91bca40736a1fc36b62.jpg",
+    "static/media/work3.jpg": "/navin_portfolio/static/media/work3.2ba2b3c0d08a4e254696.jpg",
+    "static/media/work4.jpg": "/navin_portfolio/static/media/work4.18035ac8588f71298586.jpg",
+    "static/media/Navin_Gurung.pdf": "/navin_portfolio/static/media/Navin_Gurung.2030a5b85fe12658c352.pdf",
+    "static/media/work1.jpg": "/navin_portfolio/static/media/work1.27b9d6395761fc782250.jpg",
+    "static/media/profile.jpg": "/navin_portfolio/static/media/profile.255b88fdb8e3a2ce574f.jpg",
+    "static/media/work2.jpg": "/navin_portfolio/static/media/work2.e52a0c2981a6c11ba468.jpg",
+    "static/media/testimonial3.png": "/navin_portfolio/static/media/testimonial3.d183b3fa646c6f599abd.png",
+    "index.html": "/navin_portfolio/index.html",
+    "main.31e99706.css.map": "/navin_portfolio/static/css/main.31e99706.css.map",
+    "main.f6fe2b2d.js.map": "/navin_portfolio/static/js/main.f6fe2b2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31e99706.css",
+    "static/js/main.f6fe2b2d.js"
+  ]
+}
