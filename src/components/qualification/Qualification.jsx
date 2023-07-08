@@ -165,7 +165,7 @@ const Qualification = () => {
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">レジ。品出し</h3>
+                <h3 className="qualification__title">レジ。品出し（アルバイト）</h3>
                 <span className="qualification__subtitle">
                 セブンイレブン(前橋市野中町店)
                 </span>
