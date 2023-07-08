@@ -9,7 +9,7 @@ export const projectsData = [
     {
       id: 1,
       image: Work1,
-      title: "'Susi' Restaurant",
+      title: "'Susi' レストラン",
       category: "business websites",
       link: 'https://gurungnavin.github.io/sushi-restaurant.github.io/',
     },
