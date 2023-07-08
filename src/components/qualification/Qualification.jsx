@@ -52,7 +52,7 @@ const Qualification = () => {
               <div>
                 <h3 className="qualification__title">高校</h3>
                 <span className="qualification__subtitle">
-                  KALIKA MULTIPLE CAMPUS
+                  KALIKA MULTIPLE CAMPUS, Nepal
                 </span>
                 <div className="qualification__calendar">
                   <i className="uil uil-calendar-alt"></i> 2012 - 2014
