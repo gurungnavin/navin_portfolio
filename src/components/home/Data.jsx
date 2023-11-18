@@ -58,7 +58,7 @@ const Data = () => {
 
       <h3 className="home__subtitle">Jr. Frontend Web Developer</h3>
       <p className="home__description">
-        未経験ながら、日々技術を磨き、Webデザインへの情熱を持っています。将来は社会に貢献し、人々の幸せを追求するWebデザイナーとなることを目指しています。
+      未経験ながら、日々技術を磨き、フロントエンドのWeb開発への情熱を持っています。将来は社会に貢献し、人々の幸せを追求するWebデベロッパーとなることを目指しています。
       </p>
 
       <a href="#home" className="button button--flex">
