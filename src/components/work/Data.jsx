@@ -30,9 +30,9 @@ export const projectsData = [
     {
       id: 5,
       image: Work5,
-      title: "VidTube",
-      category: "websites",
-      link: 'https://gurungnavin.github.io/vidtube.github.io/',
+      title: "Hotel 東京",
+      category: "business websites",
+      link: 'https://gurungnavin.github.io/hoteltokyo/',
     },
     {
       id: 6,
