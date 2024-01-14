@@ -10,55 +10,55 @@ export const projectsData = [
       id: 1,
       image: Work1,
       title: "'Susi' レストラン",
-      category: "business websites",
+      category: "Webサイト",
       link: 'https://gurungnavin.github.io/sushi-restaurant.github.io/',
     },
     {
       id: 3,
       image: Work3,
-      title: "Hiring (job hunting) ",
-      category: "websites",
+      title: "Hiring (Recruit) ",
+      category: "Webサイト",
       link: 'https://gurungnavin.github.io/hiring.github.io/',
     },
     {
       id: 4,
       image: Work4,
       title: "SocialBook",
-      category: "websites",
+      category: "Webサイト",
       link: 'https://gurungnavin.github.io/300m.github.io/',
     },
     {
       id: 5,
       image: Work5,
       title: "Hotel 東京",
-      category: "business websites",
+      category: "Webサイト",
       link: 'https://gurungnavin.github.io/hoteltokyo/',
     },
     {
       id: 6,
       image: Work6,
       title: "CineFlix",
-      category: "websites",
+      category: "Webサイト",
       link: 'https://gurungnavin.github.io/Cineflix.github.io/',
     },
     {
       id: 7,
       image: Work7,
       title: "Portfolio Sample",
-      category: "websites",
+      category: "Webサイト",
       link: 'https://gurungnavin.github.io/grgnvn.github.io/',
     },
   ];
 
   export const projectsNav = [
     {
-        name: 'all',
+        name: 'すべて',
     },
     {
-        name: 'websites',
+        name: 'Webサイト',
     },
 
     {
-      name: 'business websites'
+      name: 'web app'
     }
   ]

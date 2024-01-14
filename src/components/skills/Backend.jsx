@@ -12,7 +12,7 @@ const Backend = () => {
 
             <div>
               <h3 className="skills__name">Photoshop</h3>
-              <span className="skills__level">Intermediate</span>
+              <span className="skills__level">Intermediate(中級)</span>
             </div>
           </div>
 
@@ -21,7 +21,7 @@ const Backend = () => {
 
             <div>
               <h3 className="skills__name">Illustrator</h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level">Basic(初級)</span>
             </div>
           </div>
 
@@ -30,7 +30,7 @@ const Backend = () => {
 
             <div>
               <h3 className="skills__name">Adobe XD</h3>
-              <span className="skills__level">Basic</span>
+              <span className="skills__level">Basic(初級)</span>
             </div>
           </div>
 

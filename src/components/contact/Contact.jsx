@@ -31,15 +31,15 @@ const Contact = () => {
             <div className="contact__card">
               <i className="bx bxl-whatsapp contact__card-icon"></i>
 
-              <h3 className="contact__card-title">Whatsapp</h3>
+              <h3 className="contact__card-title">Line</h3>
               <span className="contact__card-data">07043770567</span>
 
               <a
-                href="https://api.whatsapp.com/send?phone=62214408789&text=Hello, more information!"
+                href="https://line.me/ti/p/8sGfXJJvXE"
                 className="contact__button"
               >
                 {" "}
-                Write me{" "}
+                Click me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
@@ -48,7 +48,7 @@ const Contact = () => {
               <i className="bx bxl-messenger contact__card-icon"></i>
 
               <h3 className="contact__card-title">Messenger</h3>
-              <span className="contact__card-data">facebook.com/100078200041934</span>
+              <span className="contact__card-data">/navingurung</span>
 
               <a href="https://m.me/crypticalcoder" className="contact__button">
                 {" "}
