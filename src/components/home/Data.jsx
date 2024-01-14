@@ -61,7 +61,7 @@ const Data = () => {
       現在未経験でありながらも、日々技術の向上に努め、Webデザインに対する熱意を持っています。将来的には、社会に貢献し、人々の幸せを追求するWebフロントエンドエンジニアとしてのキャリアを築くことが目標です。
       </p>
 
-      <a href="#home" className="button button--flex">
+      <a href="#contact" className="button button--flex">
         Say Hello
         <svg
           class="button__icon"
