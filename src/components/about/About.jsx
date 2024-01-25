@@ -24,7 +24,7 @@ const About = () => {
           </p>
 
           <a download="" href={CV} className="button button--flex">
-            履歴書ダウンロード
+            職務経歴書ダウンロード
             <svg
               class="button__icon"
               xmlns="http://www.w3.org/2000/svg"
