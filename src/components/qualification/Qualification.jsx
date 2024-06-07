@@ -198,6 +198,23 @@ const Qualification = () => {
                 </div>
               </div>
             </div>
+
+            <div className="qualification__data">
+              <div>
+                <h3 className="qualification__title">ソフトウェア事業部</h3>
+                <span className="qualification__subtitle">
+                株式会社コグラグ(品川、東京)
+                </span>
+                <div className="qualification__calendar">
+                  <i className="uil uil-calendar-alt"></i> 2024 - 現在
+                </div>
+              </div>
+
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
