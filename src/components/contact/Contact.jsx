@@ -1,7 +1,30 @@
 import React from "react";
+import { useRef } from "react";
 import "./contact.css";
+import emailjs from '@emailjs/browser';
+
 
 const Contact = () => {
+
+    const form = useRef();
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_77ki5yb', 'template_xp4fphy', form.current, {
+          publicKey: 'HckxAhd4HK4cmZEFn',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+        e.target.reset();
+    };
+
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Get in touch</h2>
@@ -72,14 +95,14 @@ const Contact = () => {
         <div className="contact__content">
           <h3 className="contact__title">write me your message</h3>
 
-          <form className="contact__form">
+          <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form-div">
               <label htmlFor="" className="contact__form-tag">
                 Name
               </label>
               <input
                 type="text"
-                name="name"
+                name="from_name"
                 className="contact__form-input"
                 placeholder="お名前"
               />
@@ -91,7 +114,7 @@ const Contact = () => {
               </label>
               <input
                 type="email"
-                name="email"
+                name="from_email"
                 className="contact__form-input"
                 placeholder="メールアドレス"
               />
@@ -102,7 +125,7 @@ const Contact = () => {
                 Messages
               </label>
               <textarea
-                name="messages"
+                name="message"
                 cols="30"
                 rows="10"
                 className="contact__form-input"
