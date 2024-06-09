@@ -105,6 +105,7 @@ const Contact = () => {
                 name="from_name"
                 className="contact__form-input"
                 placeholder="お名前"
+                required
               />
             </div>
 
@@ -117,6 +118,7 @@ const Contact = () => {
                 name="from_email"
                 className="contact__form-input"
                 placeholder="メールアドレス"
+                required
               />
             </div>
 
@@ -130,6 +132,7 @@ const Contact = () => {
                 rows="10"
                 className="contact__form-input"
                 placeholder="お問い合わせ内容"
+                required
               ></textarea>
             </div>
             <button className="button button--flex">
