@@ -203,7 +203,7 @@ const Qualification = () => {
               <div>
                 <h3 className="qualification__title">ソフトウェア事業部</h3>
                 <span className="qualification__subtitle">
-                株式会社コグラフ
+                コグラフ(株)
                 (品川、東京)
                 </span>
                 <div className="qualification__calendar">
