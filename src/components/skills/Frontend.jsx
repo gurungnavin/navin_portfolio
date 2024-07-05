@@ -30,7 +30,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">JavaScript</h3>
-              <span className="skills__level">初級</span>
+              <span className="skills__level">中級</span>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ const Frontend = () => {
             <i class="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Bootstrap</h3>
+              <h3 className="skills__name">TailwindCSS</h3>
               <span className="skills__level">初級</span>
             </div>
           </div>

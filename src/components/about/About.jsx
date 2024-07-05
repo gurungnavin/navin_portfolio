@@ -1,7 +1,6 @@
 import React from "react";
 import "./about.css";
 import AboutImage from "../../assets/about.jpg";
-import CV from "../../assets/Navin_Gurung.pdf";
 import Info from "./Info";
 
 const About = () => {
@@ -23,8 +22,8 @@ const About = () => {
             笑いジワがトレードマークです！
           </p>
 
-          <a download="" href={CV} className="button button--flex">
-            職務経歴書ダウンロード
+          <a href="/" className="button button--flex">
+          メンテナンス中
             <svg
               class="button__icon"
               xmlns="http://www.w3.org/2000/svg"
