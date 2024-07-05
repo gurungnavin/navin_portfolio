@@ -56,7 +56,7 @@ const Data = () => {
         </svg>
       </h1>
 
-      <h3 className="home__subtitle">Jr. Frontend Web Developer</h3>
+      <h3 className="home__subtitle">フロントエンド・エンジニア</h3>
       <p className="home__description">
       現在未経験でありながらも、日々技術の向上に努め、Webデザインに対する熱意を持っています。将来的には、社会に貢献し、人々の幸せを追求するWebフロントエンドエンジニアとしてのキャリアを築くことが目標です。
       </p>

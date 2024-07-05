@@ -8,7 +8,7 @@ const WorksItems = ({item, link}) => {
    </a>
    <h3 className="work__title">{item.title}</h3>
    <a href={item.link} target="_blank" rel='noreferrer' className="work__button">
-    click me <i className="bx bx-right-arrow-alt work__button-icon"></i>
+   Click(クリック) <i className="bx bx-right-arrow-alt work__button-icon"></i>
    </a>
    </div>
   )
