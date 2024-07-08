@@ -129,6 +129,8 @@ img {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: 4rem;
+  font-weight: 600;
+  color: var(--title-color-dark);
 }
 
 .section__title,
