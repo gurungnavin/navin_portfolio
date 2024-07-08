@@ -17,7 +17,7 @@
   --container-color: #fff;
 
   /*========== Font and typography ==========*/
-  --body-font: "Poppins", "Zen Maru Gothic", sans-serif;
+  --body-font: "Poppins", sans-serif;
 
   /*.5rem = 8px | 1rem = 16px ...*/
   --big-font-size: 3.5rem;
@@ -131,6 +131,7 @@ img {
   margin-bottom: 4rem;
   font-weight: 600;
   color: var(--title-color-dark);
+  font-family: "Zen Maru Gothic", sans-serif;
 }
 
 .section__title,
