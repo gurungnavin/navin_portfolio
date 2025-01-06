@@ -66,11 +66,12 @@ const Contact = () => {
               </svg>
 
               <h3 className="contact__card-title">Line</h3>
-              <span className="contact__card-data">07043770567</span>
+              <span className="contact__card-data"></span>
 
               <a
                 href="https://line.me/ti/p/8sGfXJJvXE"
                 className="contact__button"
+                target="_blank"
               >
                 {" "}
                 Click me{" "}
@@ -84,7 +85,7 @@ const Contact = () => {
               <h3 className="contact__card-title">Messenger</h3>
               <span className="contact__card-data">/navingurung</span>
 
-              <a href="https://m.me/crypticalcoder" className="contact__button">
+              <a href="https://m.me/crypticalcoder" className="contact__button" target="_blank">
                 {" "}
                 Write me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
