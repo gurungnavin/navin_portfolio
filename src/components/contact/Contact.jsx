@@ -72,6 +72,7 @@ const Contact = () => {
                 href="https://line.me/ti/p/8sGfXJJvXE"
                 className="contact__button"
                 target="_blank"
+                rel="noreferrer"
               >
                 {" "}
                 Click me{" "}
@@ -85,7 +86,7 @@ const Contact = () => {
               <h3 className="contact__card-title">Messenger</h3>
               <span className="contact__card-data">/navingurung</span>
 
-              <a href="https://m.me/crypticalcoder" className="contact__button" target="_blank">
+              <a href="https://m.me/crypticalcoder" className="contact__button" target="_blank" rel="noreferrer">
                 {" "}
                 Write me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
