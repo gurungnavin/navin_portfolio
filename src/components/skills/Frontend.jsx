@@ -3,7 +3,7 @@ import React from "react";
 const Frontend = () => {
   return (
     <div className="skills__content">
-      <h3 className="skills__title">Frontend</h3>
+      <h3 className="skills__title">Frontend(フロントエンド)</h3>
 
       <div className="skills__box">
         <div className="skills__group">
@@ -12,7 +12,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">HTML</h3>
-              <span className="skills__level">中級</span>
+              <span className="skills__level">上級レベル</span>
             </div>
           </div>
 
@@ -21,7 +21,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">CSS</h3>
-              <span className="skills__level">中級</span>
+              <span className="skills__level">中級レベル</span>
             </div>
           </div>
 
@@ -30,7 +30,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">JavaScript</h3>
-              <span className="skills__level">中級</span>
+              <span className="skills__level">中級レベル</span>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">TailwindCSS</h3>
-              <span className="skills__level">初級</span>
+              <span className="skills__level">中級レベル</span>
             </div>
           </div>
 
@@ -51,7 +51,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">Git&Github</h3>
-              <span className="skills__level">初級</span>
+              <span className="skills__level">中級レベル</span>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Frontend = () => {
 
             <div>
               <h3 className="skills__name">React</h3>
-              <span className="skills__level">初級</span>
+              <span className="skills__level">中級レベル</span>
             </div>
           </div>
 
