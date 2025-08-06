@@ -1,53 +1,47 @@
-import Work1 from '../../assets/work1.jpg'
-import Work3 from '../../assets/work3.jpg'
-import Work4 from '../../assets/work4.jpg'
-import Work5 from '../../assets/work5.jpg'
-import Work6 from '../../assets/work6.jpg'
+import Work1 from '../../assets/work1.png'
+import Work3 from '../../assets/work3.png'
+import Work4 from '../../assets/work4.png'
+import Work5 from '../../assets/work5.png'
+import Work6 from '../../assets/work6.png'
 import Work7 from '../../assets/work7.jpg'
 
 export const projectsData = [
     {
       id: 1,
       image: Work1,
-      title: "'Susi' レストラン",
+      title: "大崎ｘ五反田Link",
       category: "Webサイト",
-      link: 'https://gurungnavin.github.io/sushi-restaurant.github.io/',
+      link: 'https://osaki-gotanda-link.com/',
     },
     {
       id: 3,
       image: Work3,
-      title: "Hiring (Recruit) ",
+      title: "GUV(五反田バレーユニバーシティ)",
       category: "Webサイト",
-      link: 'https://gurungnavin.github.io/hiring.github.io/',
+      link: 'https://gotanda-valley-university.studio.site/',
     },
     {
       id: 4,
       image: Work4,
-      title: "SocialBook",
+      title: "Cograph(コグラフ)",
       category: "Webサイト",
-      link: 'https://gurungnavin.github.io/300m.github.io/',
+      link: 'https://www.co-graph.com/',
     },
     {
       id: 5,
       image: Work5,
-      title: "Hotel 東京",
+      title: "COGA Fashion(ECサイト)",
       category: "Webサイト",
-      link: 'https://gurungnavin.github.io/hoteltokyo/',
+      link: 'https://cgfashion.onrender.com/',
     },
     {
       id: 6,
       image: Work6,
-      title: "CineFlix",
-      category: "Webサイト",
-      link: 'https://gurungnavin.github.io/Cineflix.github.io/',
+      title: "社内業務管理システム(Pleasanter)",
+      category: "web app",
+      link: 'https://pleasanter.org/',
     },
-    {
-      id: 7,
-      image: Work7,
-      title: "Portfolio Sample",
-      category: "Webサイト",
-      link: 'https://gurungnavin.github.io/grgnvn.github.io/',
-    },
+
   ];
 
   export const projectsNav = [
