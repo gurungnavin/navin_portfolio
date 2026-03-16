@@ -29,10 +29,9 @@ const Data = () => {
 
      <button
   type="button"
-  className="inline-flex items-center bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-900 shadow-sm font-medium text-sm px-4 py-2 rounded focus:outline-none transition duration-150"
+  className="inline-flex items-center bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-900 shadow-sm font-medium text-red-700 text-xl animate-pulse px-4 py-2 rounded focus:outline-none transition duration-150"
 >
-  <FaCcVisa className="w-6 h-6 mr-2 text-blue-700" />
-  Say Hello
+  メンテナンス中
 </button>
     </div>
   );
