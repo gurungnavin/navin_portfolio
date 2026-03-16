@@ -1,80 +1,157 @@
-import React, { useState } from "react";
-import "./header.css";
-const Header = () => {
-/*=============== Change background header ===============*/
-  window.addEventListener("scroll", function () {
-    const header = this.document.querySelector(".header");
+// header/Header.jsx
+import { useEffect, useState } from "react";
+import { CiMenuBurger } from "react-icons/ci";
+import { IoCloseOutline } from "react-icons/io5";
+import { HiSun, HiMoon } from "react-icons/hi";
+import { HiHome, HiUser, HiBriefcase, HiPhotograph, HiMail } from "react-icons/hi";
+import { useThemeStore } from "../../store/themeStore";
+import { navItems } from "./index"; // import navItems from index.js
 
-    // When the scroll is higher than 200 viewport height, add the scroll-header class to a tag with the header tag
-    if (this.scrollY >= 80) header.classList.add("scroll-header");
-    else header.classList.remove("scroll-header");
-  });
-
-  /*=============== Toggle Menu ===============*/
-  const [Toggle, showMenu] = useState(false);
-  return (
-    <header className="header">
-      <nav className="nav container">
-        <a href="index.html" className="nav__logo">
-          Navin
-        </a>
-        <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
-          <ul className="nav__list grid">
-            <li className="nav__item">
-              <a href="#home" className="nav__link active-link">
-                <i className="uil uil-estate nav__icon"></i>
-                Home
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a href="#about" className="nav__link">
-                <i className="uil uil-user nav__icon"></i>
-                About
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a href="#skills" className="nav__link">
-                <i className="uil uil-file-alt nav__icon"></i>
-                Skills
-              </a>
-            </li>
-
-            {/* <li className="nav__item">
-              <a href="#qualification" className="nav__link">
-                <i className="uil uil-briefcase-alt nav__icon"></i>
-                Qualification
-              </a>
-            </li> */}
-
-            <li className="nav__item">
-              <a href="#portfolio" className="nav__link">
-                <i className="uil uil-scenery nav__icon"></i>
-                Portfolio
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a href="#contact" className="nav__link">
-                <i className="uil uil-message nav__icon"></i>
-                Contact
-              </a>
-            </li>
-          </ul>
-
-          <i
-            class="uil uil-times nav__close"
-            onClick={() => showMenu(!Toggle)}
-          ></i>
-        </div>
-
-        <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
-          <i class="uil uil-apps"></i>
-        </div>
-      </nav>
-    </header>
-  );
+export default function Header() {
+  const iconMap = {
+  home: <HiHome className="w-5 h-5 mr-2" />,
+  about: <HiUser className="w-5 h-5 mr-2" />,
+  services: <HiBriefcase className="w-5 h-5 mr-2" />,
+  portfolio: <HiPhotograph className="w-5 h-5 mr-2" />,
+  contact: <HiMail className="w-5 h-5 mr-2" />,
 };
 
-export default Header;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [language, setLanguage] = useState("EN");
+
+  const { darkMode, toggleTheme } = useThemeStore();
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50
+        bg-(--color-bg-surface)
+        text-(--color-text-base)
+        backdrop-blur
+        transition-shadow duration-200
+        ${isScrolled ? "shadow-lg" : ""}`}
+    >
+      <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6">
+        {/* Logo */}
+        <a href="#home" className="text-xl font-bold">
+          Navin
+        </a>
+
+        {/* Spacer */}
+        <div className="flex-1"></div>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-6">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="relative font-medium
+                  hover:text-black dark:hover:text-white
+                  after:absolute after:left-1/2 after:-translate-x-1/2
+                  after:-bottom-1 after:h-0.5 after:w-0
+                  after:bg-current after:transition-[width] after:duration-300
+                  hover:after:w-full"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Language */}
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            className="border rounded px-2 py-1 text-sm
+              bg-white dark:bg-slate-800
+              border-gray-300 dark:border-slate-700"
+          >
+            <option>EN</option>
+            <option>JP</option>
+            <option>NP</option>
+          </select>
+
+          {/* Theme Toggle */}
+          <button onClick={toggleTheme} className="p-1 cursor-pointer">
+            {darkMode ? <HiSun className="w-6 h-6" /> : <HiMoon className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button onClick={() => setMenuOpen(true)} className="ml-4 md:hidden">
+          <CiMenuBurger className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Mobile Backdrop */}
+      {menuOpen && <div className="fixed inset-0 z-40 bg-black/30 md:hidden" onClick={closeMenu} />}
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 z-50 h-screen
+          bg-(--color-bg-surface)
+          md:hidden
+          transform transition-transform duration-300
+          ${menuOpen ? "translate-y-0" : "-translate-y-full"}`}
+      >
+        <div className="relative h-full flex flex-col">
+          <button onClick={closeMenu} className="absolute top-6 right-6">
+            <IoCloseOutline className="w-7 h-7" />
+          </button>
+
+          <ul className="flex flex-col justify-center items-center flex-1 gap-6 text-lg w-48 mx-auto">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={closeMenu}
+                  className="flex items-center gap-2"
+                >
+                  {iconMap[item.id]}
+                  <span className="relative w-fit
+                    after:absolute after:left-1/2 after:-translate-x-1/2
+                    after:-bottom-1 after:h-0.5 after:w-0
+                    after:bg-current after:transition-[width] after:duration-300
+                    hover:after:w-full"
+                  >
+                    {item.label}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex justify-center gap-4 pb-10">
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="border rounded px-2 py-1 text-sm
+                bg-white dark:bg-slate-800"
+            >
+              <option>EN</option>
+              <option>JP</option>
+              <option>NP</option>
+            </select>
+
+            <button onClick={toggleTheme}>
+              {darkMode ? <HiSun className="w-6 h-6" /> : <HiMoon className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

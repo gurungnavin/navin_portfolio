@@ -1,0 +1,28 @@
+@custom-variant dark (&:where(.dark, .dark *));
+@import "tailwindcss";
+
+/* ===== LIGHT THEME ===== */
+:root {
+  --color-bg-base: #f9fafb;      /* page background */
+  --color-bg-surface: #ffffff;   /* cards / navbar */
+  --color-text-base: #111827;    /* main text */
+}
+
+/* ===== DARK THEME ===== */
+.dark {
+  --color-bg-base: #292828;      /* page background */
+  --color-bg-surface: #1f2937;   /* gray-800 */
+  --color-text-base: #f3f4f6;    /* light text */
+}
+
+html
+
+/* ===== APPLY GLOBAL COLORS ===== */
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-base);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
