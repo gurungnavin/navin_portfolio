@@ -38,7 +38,7 @@ export default function Header() {
         bg-(--color-bg-surface)
         text-(--color-text-base)
         backdrop-blur
-        transition-shadow duration-200
+        transition-shadow duration-200 font-mono
         ${isScrolled ? "shadow-lg" : ""}`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 justify-between">
