@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+@import "tailwindcss";
+
+/* Theme Variables */
+@theme {
+  --color-primary: #BB3E00;
+  --color-secondary: #F7AD45;
+  --color-background: #657C6A;
+  --color-text: #F7F7F7;
+  --color-accent: #A2B9A7;
+  --font-klee: "Klee One", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* Global Styles */
+html,
+body {
+  width: 100%;
+  background-color: black;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Utility Classes */
+
+/* flex-center: A utility class to center content both horizontally and vertically using Flexbox */
+@utility flex-center {
+ @apply flex items-center justify-center;
+}
+
+/* col-center: A utility class to center content in a column layout using Flexbox */
+@utility col-center {
+ @apply flex flex-col items-center justify-center;
+}
+
+/* abs-center: A utility class to absolutely position an element at the center of its parent */
+@utility abs-center {
+ @apply absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2;
+}
+
+/* text-gradient: A utility class to apply a gradient effect to text */
+/* -webkit-background-clip means that the background will only be visible where the text is, creating a gradient text effect. */
+/* background-clip text means text background will be clipped to the text, making the text appear as a gradient. */
+@utility text-gradient {
+ background: linear-gradient(to bottom, #ffffff, #898989);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+}
+
+
+/* radial-gradient utility: center spotlight fade (dark center -> black mid -> transparent edge) */
+@utility radial-gradient {
+ background: radial-gradient(
+  circle at center,
+  #434343 0%,
+  #000 50%,
+  transparent 100% 
+ );
+}
+
+@layer components {
+  /* main tag will be styled as a full-width container with hidden horizontal overflow */
+  main {
+    @apply w-full overflow-x-hidden;
+  }
+  /* nav tag will be styled as a fixed header with full width and z-index 50 */
+  nav {
+    @apply fixed z-50 w-full;
+    /* inside the nav of div */
+    /* div will be flex, column on mobile, row on desktop */
+    /* justify-between on desktop, center on mobile */
+    /* gap of 5 between items, padding y of 5, padding x of 0 on desktop and 5 on mobile */
+    /* container(which means max-width) and mx-auto to center it */
+    div {
+      @apply flex flex-row justify-between items-center gap-5 py-5 px-5 lg:px-0 container mx-auto;
+    }
+
+    p {
+      @apply font-poppins text-2xl -mb-2;
+    }
+    /* anchor tags will be styled with text-nowrap to prevent wrapping of text, text-base on desktop and text-sm on mobile */
+    a {
+      @apply cursor-pointer text-nowrap md:text-base text-sm;
+    }
+    ul {
+      @apply flex-center lg:gap-12 gap-7;
+    }
+  }
+}
