@@ -5,6 +5,8 @@ import "lenis/dist/lenis.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { siteConfig } from "@/content/site";
+import { ColorProvider } from "@/components/theme/color-provider";
+import { Preloader } from "@/components/layout/preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,13 +35,17 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
+        <Preloader />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <SmoothScroll>{children}</SmoothScroll>
+          <ColorProvider>
+            <SmoothScroll>{children}</SmoothScroll>
+          </ColorProvider>
         </ThemeProvider>
       </body>
     </html>
