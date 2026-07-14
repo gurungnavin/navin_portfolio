@@ -1,81 +1,36 @@
-# Vite 7 + React + Tailwind 4 Setup Guide
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This guide walks through setting up a fresh Vite 7 + React project with Tailwind CSS 4 and `@tailwindcss/vite`.
+## Getting Started
 
-## 1. Scaffold a Vite Project
-
-```bash
-npm create vite@latest .
-```
-
-- Select `React`.
-- Choose `JavaScript` or `TypeScript`.
-- Allow removal of existing files if prompted.
-
-## 2. Downgrade Vite & React Plugin
-
-```bash
-npm install vite@7 @vitejs/plugin-react@5 --save-dev --legacy-peer-deps
-```
-
-This ensures compatibility with Tailwind 4.
-
-## 3. Install Tailwind CSS
-
-```bash
-npm install -D tailwindcss@4 @tailwindcss/vite postcss autoprefixer --legacy-peer-deps
-```
-
-## 4. Configure Vite for Tailwind
-
-Edit `vite.config.js`:
-
-```js
-import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite';
-
-export default defineConfig({
-  plugins: [tailwindcss()],
-});
-```
-
-## 5. Setup Tailwind CSS in Your Project
-
-Create `src/index.css`:
-
-```css
-@import "tailwindcss";
-```
-
-Import it in `src/main.jsx`:
-
-```js
-import './index.css';
-```
-
-## 6. Run the Development Server
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open the URL provided in your terminal to view the project.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 7. Notes
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Use PowerShell or CMD on Windows to avoid CLI detection issues.
-- Keep the `.git` folder to preserve your GitHub connection.
-- For production builds:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-npm run build
-```
+## Learn More
 
-## 8. Optional: Testing Tailwind
+To learn more about Next.js, take a look at the following resources:
 
-Add the following in `App.jsx` to verify Tailwind is working:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```jsx
-<h1 className="text-5xl text-blue-500">Tailwind is working!</h1>
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
