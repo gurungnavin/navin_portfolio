@@ -7,6 +7,10 @@ import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { siteConfig } from "@/content/site";
 import { ColorProvider } from "@/components/theme/color-provider";
 import { Preloader } from "@/components/layout/preloader";
+import { BootProvider } from "@/components/layout/boot-provider";
+import { MenuProvider } from "@/components/layout/menu-provider";
+import { MenuPanel } from "@/components/layout/menu-panel";
+import { Navbar } from "@/components/layout/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,18 +39,26 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <Preloader />
+        <BootProvider>
+          <Preloader />
 
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ColorProvider>
-            <SmoothScroll>{children}</SmoothScroll>
-          </ColorProvider>
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ColorProvider>
+              <SmoothScroll>
+                <MenuProvider>
+                  <Navbar />
+                  <MenuPanel />
+                  {children}
+                </MenuProvider>
+              </SmoothScroll>
+            </ColorProvider>
+          </ThemeProvider>
+        </BootProvider>
       </body>
     </html>
   );

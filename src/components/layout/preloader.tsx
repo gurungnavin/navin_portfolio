@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useBoot } from "@/components/layout/boot-provider";
 
 const STORAGE_KEY = "visited";
 
@@ -39,52 +40,59 @@ export function Preloader() {
   const [phase, setPhase] = useState<"boot" | "welcome">("boot");
   const [count, setCount] = useState(0);
   const [passed, setPassed] = useState(0);
+  const [zooming, setZooming] = useState(false);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const { setBooted } = useBoot();
 
-  useEffect(() => {
-    // if (sessionStorage.getItem(STORAGE_KEY) || reduce) return;
-    if (reduce) return;
-    setShow(true);
-    document.body.style.overflow = "hidden";
+useEffect(() => {
+  if (reduce) {
+    setBooted(true);
+    return;
+  }
+  setShow(true);
+  document.body.style.overflow = "hidden";
 
-    const duration = 5000;
-    const start = performance.now();
-    let raf = 0;
+  const duration = 3000;
+  const start = performance.now();
+  let raf = 0;
 
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 2);
-      setCount(Math.round(eased * 100));
-      setPassed(Math.floor(eased * TESTS.length));
-      if (p < 1) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        setCount(100);
-        setPassed(TESTS.length);
-        const toWelcome = setTimeout(() => setPhase("welcome"), 500);
-        const toEnd = setTimeout(() => {
-          // sessionStorage.setItem(STORAGE_KEY, "1");
-          setShow(false);
-          document.body.style.overflow = "";
-        }, 500 + 2900);
-        timers.current.push(toWelcome, toEnd);
-      }
-    };
-    raf = requestAnimationFrame(tick);
+  const tick = (now: number) => {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 2);
+    setCount(Math.round(eased * 100));
+    setPassed(Math.floor(eased * TESTS.length));
+    if (p < 1) {
+      raf = requestAnimationFrame(tick);
+    } else {
+      setCount(100);
+      setPassed(TESTS.length);
+      const toWelcome = setTimeout(() => setPhase("welcome"), 500);
+      const toZoom = setTimeout(() => {
+        setZooming(true);
+        setBooted(true);
+      }, 500 + 1900);
+      const toEnd = setTimeout(() => {
+        setShow(false);
+        document.body.style.overflow = "";
+      }, 500 + 1900 + 1200);
+      timers.current.push(toWelcome, toZoom, toEnd);
+    }
+  };
+  raf = requestAnimationFrame(tick);
 
-    return () => {
-      cancelAnimationFrame(raf);
-      timers.current.forEach(clearTimeout);
-      document.body.style.overflow = "";
-    };
-  }, [reduce]);
+  return () => {
+    cancelAnimationFrame(raf);
+    timers.current.forEach(clearTimeout);
+    document.body.style.overflow = "";
+  };
+}, [reduce, setBooted]);
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          className="fixed inset-0 z-[100] flex flex-col bg-background p-6 sm:p-10"
-          exit={{ clipPath: "inset(0 0 100% 0)" }}
+          className="fixed inset-0 z-100 flex flex-col bg-background p-6 sm:p-10"
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           <div className="flex items-center justify-between font-mono text-xs tracking-widest text-muted-foreground">
@@ -134,6 +142,18 @@ export function Preloader() {
               <motion.div
                 key="welcome"
                 className="flex flex-1 flex-col items-center justify-center gap-2"
+                animate={
+                  zooming ? { scale: 14, opacity: 0 } : { scale: 1, opacity: 1 }
+                }
+                transition={
+                  zooming
+                    ? {
+                        scale: { duration: 1.1, ease: [0.7, 0, 0.84, 0] },
+                        opacity: { duration: 1.1, ease: "linear" },
+                      }
+                    : { duration: 0 }
+                }
+                style={{ transformOrigin: "center center" }}
               >
                 <div className="flex gap-3 overflow-visible">
                   {"WELCOME".split("").map((ch, i) => (
