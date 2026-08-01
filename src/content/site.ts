@@ -14,9 +14,9 @@ export type SiteConfig = typeof siteConfig;
 
 
 export const navLinks = [
-  { num: "01", label: "about", href: "#about" },
-  { num: "02", label: "skills", href: "#skills" },
-  { num: "03", label: "work", href: "#work" },
+  { num: "01", label: "about", href: "/#about" },
+  { num: "02", label: "skills", href: "/#skills" },
+  { num: "03", label: "work", href: "/#work" },
   { num: "04", label: "blog", href: "/blog" },
-  { num: "05", label: "contact", href: "#contact" },
+  { num: "05", label: "contact", href: "/#contact" },
 ] as const;
