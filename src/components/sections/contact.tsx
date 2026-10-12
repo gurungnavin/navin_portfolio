@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "motion/react";
-import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconBrandTiktok } from "@tabler/icons-react";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { siteConfig } from "@/content/site";
@@ -36,9 +36,17 @@ const CHANNELS = [
   {
     fig: "FIG.03",
     label: "LINKEDIN",
-    value: "/navingurung",
+    value: "/navin-gurung",
     href: siteConfig.socials.linkedin,
     icon: IconBrandLinkedin,
+    external: true,
+  },
+  {
+    fig: "FIG.04",
+    label: "TIKTOK",
+    value: "@lessbutbetter553",
+    href: siteConfig.socials.tiktok,
+    icon: IconBrandTiktok,
     external: true,
   },
 ];
@@ -71,7 +79,7 @@ export function Contact() {
           initial={reduce ? false : "hidden"}
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {CHANNELS.map((ch) => {
             const Icon = ch.icon;
@@ -114,7 +122,7 @@ export function Contact() {
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex size-2 rounded-full bg-primary" />
             </span>
-            available for work — usually responds within 24h
+            open to opportunities — feel free to reach out
           </div>
         </Reveal>
       </div>
