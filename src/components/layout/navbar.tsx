@@ -28,6 +28,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // 他ページから /#section で来た場合、スクロール後に # を消す
+  useEffect(() => {
+    if (pathname !== "/" || !window.location.hash) return;
+    const el = document.getElementById(window.location.hash.slice(1));
+    if (el && lenis) lenis.scrollTo(el);
+    else el?.scrollIntoView();
+    window.history.replaceState(null, "", "/");
+  }, [pathname, lenis]);
+
   // smooth-scroll to a section; if not on home, navigate there first
   function handleSectionClick(
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -40,8 +49,8 @@ export function Navbar() {
       const el = document.getElementById(id);
       if (el && lenis) lenis.scrollTo(el);
       else el?.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", "/");
     }
-    // if not on home, let Link navigate to /#id normally
   }
 
   return (
