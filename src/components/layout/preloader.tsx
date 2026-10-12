@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useBoot } from "@/components/layout/boot-provider";
 
@@ -43,12 +44,24 @@ export function Preloader() {
   const [zooming, setZooming] = useState(false);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const { setBooted } = useBoot();
+  const pathname = usePathname();
 
 useEffect(() => {
-  if (reduce) {
+  // トップページ以外、または同一セッションで表示済みならスキップ
+  let visited = false;
+  try {
+    visited = sessionStorage.getItem(STORAGE_KEY) === "1";
+  } catch {}
+
+  if (reduce || pathname !== "/" || visited) {
     setBooted(true);
     return;
   }
+
+  try {
+    sessionStorage.setItem(STORAGE_KEY, "1");
+  } catch {}
+
   setShow(true);
   document.body.style.overflow = "hidden";
 
@@ -85,7 +98,7 @@ useEffect(() => {
     timers.current.forEach(clearTimeout);
     document.body.style.overflow = "";
   };
-}, [reduce, setBooted]);
+}, [reduce, pathname, setBooted]);
 
   return (
     <AnimatePresence>
