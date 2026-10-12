@@ -14,7 +14,7 @@ import { ArrowDown } from "lucide-react";
 import { useBoot } from "@/components/layout/boot-provider";
 import { siteConfig } from "@/content/site";
 
-const ROLES = ["Frontend Developer", "React Engineer", "Problem Solver"];
+const ROLES = ["Full-Stack Developer", "Mobile App Builder", "Problem Solver"];
 
 const container: Variants = {
   hidden: {},
@@ -181,7 +181,7 @@ export function Hero() {
           {nameWords.map((word, i) => (
             <span
               key={i}
-              className="block cursor-default transition-colors duration-300 hover:text-primary"
+              className="block transition-colors duration-300 hover:text-primary cursor-pointer"
             >
               {word}
             </span>
@@ -201,8 +201,7 @@ export function Hero() {
           variants={item}
           className="mt-8 max-w-lg text-muted-foreground"
         >
-          I build fast, accessible web applications with clean architecture and
-          thoughtful detail. Placeholder tagline — swap this later.
+          I build web and mobile apps end to end, from APIs to interfaces. Most of what I ship runs in production, used by real people every day.
         </motion.p>
       </motion.div>
 
