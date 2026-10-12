@@ -6,7 +6,10 @@ import { about } from "@/content/about";
 
 export function About() {
   return (
-    <section id="about" className="relative border-t border-border py-24 sm:py-32">
+    <section
+      id="about"
+      className="relative border-t border-border py-24 sm:py-32"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <p className="mb-12 font-mono text-xs tracking-widest text-muted-foreground">
@@ -18,9 +21,6 @@ export function About() {
           {/* photo */}
           <Reveal>
             <div className="relative">
-              <div className="absolute -left-3 -top-3 z-10 font-mono text-[10px] tracking-widest text-muted-foreground">
-                FIG.02 / {about.photo.label}
-              </div>
               <div className="relative h-[380px] w-full overflow-hidden border border-border sm:h-[460px]">
                 <Image
                   src={about.photo.src}
@@ -31,7 +31,10 @@ export function About() {
                 />
                 <div className="photo-grid pointer-events-none absolute inset-0 opacity-80" />
               </div>
-              <div aria-hidden className="absolute -bottom-3 -right-3 -z-10 size-20 bg-primary/30" />
+              <div
+                aria-hidden
+                className="absolute -bottom-3 -right-3 -z-10 size-20 bg-primary/30"
+              />
             </div>
           </Reveal>
 
@@ -46,7 +49,35 @@ export function About() {
             <Reveal delay={0.1}>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 {about.bio.map((p, i) => (
-                  <p key={i}>{p}</p>
+                  <p key={i}>
+                    {p.split(/(Gurung)/).map((part, j) => {
+                      const link =
+                        about.links[part as keyof typeof about.links];
+                      if (!link) return part;
+                      return (
+                        <span key={j} className="group relative inline-block">
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 transition-colors hover:text-primary"
+                          >
+                            {part}
+                          </a>
+                          {/* ホバー時に説明カードを表示 */}
+                          <span
+                            role="tooltip"
+                            className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-72 -translate-x-1/2 translate-y-1 border border-border bg-background p-4 text-left text-sm leading-relaxed text-muted-foreground opacity-0 shadow-lg transition-all duration-200 group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100"
+                          >
+                            {link.note}
+                            <span className="mt-2 block font-mono text-[10px] tracking-widest text-primary">
+                              WIKIPEDIA ↗
+                            </span>
+                          </span>
+                        </span>
+                      );
+                    })}
+                  </p>
                 ))}
               </div>
             </Reveal>
