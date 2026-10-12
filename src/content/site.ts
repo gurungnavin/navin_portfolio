@@ -1,12 +1,13 @@
 export const siteConfig = {
   name: "Navin Gurung",
-  role: "Front-End Developer",
+  role: "Software Engineer",
   description: "Personal portfolio and blog.",
-  url: "https://yourdomain.com",
+  url: "https://navingurung.com",
   socials: {
     github: "https://github.com/gurungnavin",
-    linkedin: "https://linkedin.com/in/yourhandle",
-    email: "you@example.com",
+    linkedin: "https://www.linkedin.com/in/navin-gurung-9021611b3/",
+    tiktok: "https://www.tiktok.com/@lessbutbetter553",
+    email: "navingurung865@gmail.com",
   },
 } as const;
 
